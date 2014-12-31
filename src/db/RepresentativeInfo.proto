@@ -1,0 +1,57 @@
+package WDbType;
+
+option java_package = "com.oc.protos";
+option java_outer_classname = "RepresentativeInfoProtos";
+
+message RepresentativeInfo {
+	required fixed32 id = 1;
+	required string firstName = 2;
+	required string lastName = 3;
+	required string infoLink = 4;
+	required PoliticalPartyInfo currentPoliticalParty = 5;
+	//required string born = 5;
+	
+	//repeated PoliticalPartyInfo politicalParties = 5;
+}
+
+message PoliticalPartyInfo {
+	enum PoliticalParties {
+		RKP = 1;
+		KOKOOMUS = 2;
+		KD = 3;
+		KESKUSTA = 4;
+		PS = 5;
+		VIHREAT = 6;
+		SDP = 7;
+		VASEMMISTO = 8;
+	}
+
+	//required fixed32 fromYear = 1;
+	//required fixed32 toYear = 2;
+	required PoliticalParties party = 1;
+	required string region = 2;
+}
+
+message PoliticalPartyNames {
+	message PoliticalPartyName {
+		required PoliticalPartyInfo.PoliticalParties party = 1;
+		required string name = 2;
+	}
+	repeated PoliticalPartyName party = 1;
+}
+
+message PoliticalSeasonSeating {
+	repeated RepresentativeSeatingInfo representativeSeat = 1;
+	repeated RepresentativeSeatChangeInfo seatChange = 2;
+}
+
+message RepresentativeSeatChangeInfo {
+	required string reason = 1;
+	required RepresentativeSeatingInfo representativeSeat = 2;
+}
+
+message RepresentativeSeatingInfo {
+	required fixed32 seat = 1;
+	required fixed32 representativeKey = 2;
+	required fixed32 partyId = 3;
+}

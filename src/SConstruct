@@ -1,0 +1,64 @@
+import glob
+
+#--Variables--
+targetFolder = '../bin/'
+target = 'oc_server'
+targetDebug = 'oc_server_debug'
+libs = ['wt', 'wthttp', 'couchbase', 'protoc', 'libboost_thread', 'libboost_signals', 'libboost_system', 'protobuf', 'mysqlclient']
+#definesApplication='-DLOGGER_TYPE_OC="LoggerWt"'
+definesApplication = ''
+flagsDebug = '-Wall -pedantic -Wextra -g -std=c++0x ' + definesApplication
+#Use -Ofast instead of O2 with modern compilers
+flags = '-Wall -pedantic -Wextra -std=c++0x -march=native -mfpmath=sse -funroll-loops -O2' + definesApplication
+#Add -std=c++0x for c++11
+cxx = 'g++'
+sources = ['main.cpp', 'Application.cpp', 'ContentManager.cpp', 'CouchSession.cpp', 'UserSession.cpp', 
+		'VotesAnalyserWidget.cpp', 'DataCache.cpp', 'MatchAlgorithm.cpp', 'db/DbUtils.cpp', 'DialogWidgets.cpp', 
+		'Globals.cpp', 'db/PersistentStatisticsStorage.cpp', 'RssAggregatorWidget.cpp']
+
+protoFiles = ['UserInfo.proto', 'RepresentativeInfo.proto', 'VoteInfo.proto', 'PoliticalSeason.proto', 'SiteNews.proto', 'NewsElements.proto', 'Dictionary.proto']
+
+#--Functions--
+Help("""
+To compile:
+1. Run without params to compile release version
+2. Run with \"debug\" target to compile debug version 
+""")
+
+def copyToBinFolder(target=None, source=None, env=None):
+	import shutil
+	src = str(target[0])
+	print '\tCopying', src, '->', targetFolder
+	shutil.copy(src, targetFolder)
+	
+def compileProtoFiles():
+	import os, sys
+	for f in protoFiles:
+		c = "protoc --proto_path=db/ --cpp_out=db/ db/" + f
+		print 'Compiling \"' + f + "\" with: \"" + c + "\""
+		os.system(c)
+		sys.stdout.flush()
+
+#--Build--
+
+#Additional clean rules
+Clean([target, targetDebug], [target, targetDebug] + glob.glob('db/*cc') + glob.glob('db/*h'))
+
+#print COMMAND_LINE_TARGETS #Debug
+
+#Build environments
+env = Environment(CXX=cxx, CCFLAGS=flags)
+dbg = Environment(CXX=cxx, CCFLAGS=flagsDebug + ' -DDEBUG -g')
+dbg.Alias('debug', targetDebug)
+
+compileProtoFiles()
+sources = sources + glob.glob('db/*cc')
+
+if 'debug' in COMMAND_LINE_TARGETS:
+	print 'Compiling debug version'
+	dbg.Program(targetDebug, sources, LIBS=libs)
+	dbg.AddPostAction(targetDebug, copyToBinFolder)
+else:
+	print 'Compiling release version'
+	env.Program(target, sources, LIBS=libs)
+	env.AddPostAction(target, copyToBinFolder)

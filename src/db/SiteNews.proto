@@ -1,0 +1,14 @@
+package WDbType;
+
+option java_package = "com.oc.protos";
+option java_outer_classname = "SiteNews";
+
+message NewsIndex {
+	repeated string newsKeys = 1;
+}
+
+message NewsItem {
+	required string title = 1;
+	required string content = 2;
+	required string published = 3;
+}

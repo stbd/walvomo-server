@@ -1,0 +1,1 @@
+./oc_server --docroot root/ --http-address 0.0.0.0 --http-port 8585 -c wt_config.xml --servername www.walvomo.fi --deploy-path=/app

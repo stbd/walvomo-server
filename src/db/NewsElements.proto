@@ -1,0 +1,47 @@
+package WDbType;
+
+option java_package = "com.oc.protos";
+option java_outer_classname = "NewsElements";
+
+/* 	Format for tags:
+	[tag][tag]
+		where tag:
+		[h]:[tag];
+			where: h = c for collection
+				       s for item
+				   tag = tag
+	Note: tags always end with ";" 
+*/
+
+message UpdateItem {
+	required string publishedTimestamp = 1;
+	required string title = 2;
+	required string url = 3;
+	optional string limitedContent = 4;
+}
+
+message UpdateSource {
+	required string title = 1;
+	required string description = 2;
+	required string sourceAddress = 3;
+	required fixed32 numberOfItems = 4;
+	required string latestReadItem = 5;
+	required string dataPath = 6;
+	optional string tags = 7;
+}
+
+message CollectionOfUpdateSources {
+	required string title = 1;
+	required string description = 2;
+	repeated UpdateSource updateSources = 3;
+	optional string tags = 4;
+}
+
+message Collections {
+	repeated string collections = 1;
+}
+
+message CustomItemSource {
+	required string name = 1;
+	required string sourceAddress = 2;
+}

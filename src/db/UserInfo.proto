@@ -1,0 +1,65 @@
+package WDbType;
+
+option java_package = "com.oc.protos";
+option java_outer_classname = "UserInfoProtos";
+
+message UserInfoContainer {
+	required int32 version = 1 [default = 1];
+	required UserInfo userInfo = 2;
+}
+
+message UserInfo {
+	required string username = 1;
+	required bytes password = 2;
+	required bytes passwordSalt = 3; 
+	required bytes passwordHashAlgorithm = 4;
+	required fixed32 numberOfFailedLoginAttempsAfterSuccessfulLogin = 5;
+	required fixed32 latestLoginAttempt = 6;
+	required string email = 7;
+	required sfixed64 userInfoVersion = 8;
+	required fixed32 YearOfBirth = 9;
+	
+	enum UserStatus {
+		NORMAL = 1;
+		WAITING_FOR_CONFORMATION = 2;
+	}
+	
+	required UserStatus userStatus = 10;
+	
+	enum Gender {
+		GENDER_NOT_SET = 1;
+		MALE = 2;
+		FEMALE = 3;
+	}	
+	
+	required Gender gender = 11 [default = GENDER_NOT_SET];
+	
+	enum EmailTokenRole {
+		NOT_USED = 1;
+		LOST_PASSWORD = 2;
+		VERIFY_EMAIL = 3;
+	}
+	
+	message EmailToken {
+		required EmailTokenRole emailTokenRole= 1;
+		required string tokenHash = 2;
+		required fixed32 tokenExpirationTime = 3;
+	}
+	
+	required EmailToken emailToken = 12;
+	
+	message Identity {
+		required string provider = 1;
+		required string id = 2;
+	}
+	
+	repeated Identity identities = 13;
+	
+	repeated fixed32 ownedUserLists = 14;
+	
+	message userVoteListKey {
+		required string username = 1;
+		required fixed32 listId = 2;
+	}
+	repeated userVoteListKey followedUserLists = 15;
+}

@@ -1,0 +1,546 @@
+.vaw-activeMonthList, .vaw-followedMonthList, .vaw-ownedVotesLists, .vaw-votesLeftSideButton,
+.vaw-votesListScrollArea, .vaw-interestedListScrollArea, .vaw-buttonMatch, .vaw-buttonShare, .vaw-buttonDelete,
+.vaw-ownedVotesLists, .main-header-links, .vaw-voteinfo-area, .vaw-interested-votes-area,
+.fp-description, .fp-news, .fp-welcome, .register-gender, .vaw-representativeInfo, .vaw-seatmap, .vaw-selectedListDescription
+{
+	float: left;
+}
+
+/* ------------Main------------ */
+
+body {
+	font-family: "Courier New";
+}
+
+.main-width {
+	min-width: 1300px;
+	max-width: 1300px;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.main-header {
+	min-height: 150px;
+	min-width: 1000px;
+	max-width: 1000px;
+	
+	/*
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#F5F5F5');
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#F5F5F5));
+	background: -moz-linear-gradient(top,  #FFFFFF,  #F5F5F5);
+	*/
+}
+
+.main-header-logInViaOther {
+	margin-right: 10px;
+}
+
+.main-header-links {
+	width: 400px;
+	clear: left;
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
+.main-header-login-field-length {
+	display: inline-block;
+	min-width: 120px;
+}
+
+.main-header-logo {
+	float: left;
+}
+
+.main-header-login-field {
+	clear: left;
+	text-decoration: underline;
+	cursor: pointer; 
+	cursor: hand;
+	text-align: center;
+}
+
+.main-content {
+	clear: left;
+	margin-top: 10px;
+}
+
+.main-spacer {
+	clear: both;
+	padding-top: 20px;
+}
+
+.main-share {
+}
+
+.main-contact {
+	float: right;
+}
+
+.main-disclaimer{
+	float: right;
+	clear: right;
+	text-decoration: underline;
+	cursor: pointer;
+	/*margin-top: 20px;*/
+}
+
+.main-short-legal-info {
+	float: right;
+	clear: right;
+	margin-top: 10px;
+	font-size: 10px;
+}
+
+.main-bottom {
+	clear: both;
+	margin-top: 50px;
+	min-width: 1200px;
+	max-width: 1200px;	
+}
+
+.main-horizontalRule
+{
+	clear: both;
+	width: 100%;
+	background-color: #d1d1d1;
+	height: 1px;
+	margin-top: 10px;
+	margin-bottom: 2px;
+}
+
+.main-horizontalRule-black
+{
+	clear: both;
+	width: 100%;
+	background-color: #d1d1d1;
+	height: 1px;
+	margin-top: 10px;
+	margin-bottom: 2px;
+}
+
+/* ------------General------------ */
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.link {
+	cursor: pointer;
+}
+
+.dialog-window-base {
+	max-width: 500px;
+	min-width: 500px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	display: block;
+	/*padding: 0.4em;*/
+}
+
+.register-gender {
+	min-width: 50px;
+	margin-left: 10px;
+}
+
+.register-disclaimer-button {
+	display: block;
+	min-width: 100px;
+	clear: both;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+/* ------------VAW-Areas------------ */
+
+.vaw-vote-list-element-yes, .vaw-vote-list-element-no, .vaw-vote-list-element-no-choise
+{
+	min-width: 680px;
+}
+
+/* removed until colors are updated with choise changes 
+.vaw-vote-list-element-yes {
+	background: rgb(0, 255, 0);
+	background: rgba(0, 255, 0, 0.6);
+	border-radius: 10px;
+}
+
+.vaw-vote-list-element-no {
+	background: rgb(255, 0, 0);
+	background: rgba(255, 0, 0, 0.6);
+    border-radius: 10px;
+}
+*/
+
+.vaw-vote-list-element-no-choise {
+	opacity: 1.0;
+}
+
+.vaw-selectedListDescription {
+	min-width: 210px;
+	max-width: 210px;
+	margin-top: 25px;
+	min-height: 45px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-size: 20px;
+}
+
+.vaw-votesListScrollArea {
+	min-width: 700px;
+	max-width: 700px;
+	min-height: 400px;
+	max-height: 400px;
+	margin-top: 20px;
+	margin-right: 50px;
+	border: solid #F0F0F0 10px;
+}
+
+.vaw-votelists-area {
+	margin-left: 50px;
+	min-width: 610px;
+	max-width: 610px;
+}
+
+.vaw-voteinfo-area {
+	min-height: 350px;
+	clear: left;
+}
+
+.vaw-interestedListScrollArea {
+	min-height: 330px;
+	max-height: 330px;
+	min-width: 270px;
+	max-width: 270px;
+	margin-top: 10px;
+	margin-left: 5px;
+	float: left;
+	background-color: white;
+}
+
+.vaw-interestedListElement
+{
+	min-width: 270px;
+	max-width: 270px;
+	margin-top: 5px;	
+}
+
+.vaw-interestedListElement-remove-icon
+{
+	margin-top: -3px
+}
+
+.vaw-vote-share-button {
+	margin-left: 5px;	
+}
+
+.vaw-interested-votes-area {
+	float: left;
+	min-width: 400px;
+	max-width: 400px;
+	background-color: #F0F0F0;
+	padding: 5px;
+	margin-top: 20px;
+	/*
+	border-width: 1px;
+	border-bottom-width: 1px;
+	border-bottom-color: black;
+	border-bottom-style: solid;
+	*/
+}
+
+.vaw-interested-votes-buttons-area {
+	float: left;
+	min-width: 100px;
+	max-width: 100px;
+	min-height: 350px;
+	max-height: 350px;	
+}
+
+.vaw-voteListDescriptionArea {
+	min-width: 600px;
+	max-width: 600px;
+	min-height: 100px;
+	max-height: 200px;
+	margin-top: 20px;
+	margin-left: 95px;
+	display: block;
+	background-color: #F0F0F0;
+	border-radius: 10px;
+	overflow: auto;
+}
+
+.vaw-voteDescriptionArea {
+	float: left;
+	min-height: 400px;
+	min-width: 300px;
+	max-width: 300px;
+	margin-top: 20px;
+	overflow: auto;
+	border-radius: 10px;
+	border: 2px solid black;
+	padding: 5px;
+}
+
+.vaw-representativeInfo {
+	
+	position:absolute;
+	left:100px;
+	top:150px;	
+	width: 350px;
+	background: rgb(255 ,255, 255);
+	background: rgba(255, 255, 255, 0.9);
+	border: 2px solid black;
+	border-radius: 10px;
+	/*margin-left: auto;
+	margin-right: auto;*/
+	/*margin-top: 200px;*/
+	
+	
+}
+
+.vaw-statline {
+    font-weight: bold;
+	font-size: 13px;
+    margin-top: 3px;
+}
+
+.vaw-instructions{
+	float: left;
+	min-height: 100px;
+	min-width: 300px;
+	max-width: 300px;
+	margin-top: 20px;
+}
+
+/* ------------VAW-Buttons------------ */
+
+.vaw-moveToInterested {
+	float: right;
+	margin-left: 5px;
+}
+
+.vaw-showMoreButton
+{
+	display: block;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 15em;
+    text-decoration: underline;
+    cursor: pointer
+}
+
+.vaw-buttonMatch, .vaw-buttonShare, .vaw-buttonDelete, .vaw-buttonSave
+{
+	min-width: 75px;
+	max-width: 75px;
+	margin-left: 10px;
+	margin-right: 10px;
+	font-weight: bold;
+}
+
+.vaw-votesLeftSideButton, .vaw-votesRightSideButton
+{
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+.vaw-votesLeftSideButton
+{
+	margin-left: 150px;
+}
+
+.vaw-votesRightSideButton
+{
+	margin-right: 150px;
+}
+
+.vaw-buttonMatch {
+	margin-bottom: 25px;
+}
+
+.vaw-buttonMatch, .vaw-buttonShare, .vaw-buttonDelete, .vaw-buttonSave {
+	margin-top: 25px;
+}
+
+.vaw-votesLeftSideButton, .vaw-votesRightSideButton {
+	/*margin-top: 150px;*/
+}
+
+.vaw-userChoise-chosen, .vaw-userChoise-notChosen, .vaw-userChoise-none {
+	margin-left: 5px;
+}
+
+.vaw-userChoise-chosen {
+	background-color: green;
+} 
+
+.vaw-userChoise-notChosen {
+	background-color: red;
+} 
+
+.vaw-userChoise-none {
+	background-color: grey;
+} 
+
+/* ------------VAW-Comboboxes------------ */
+
+.vaw-followedMonthList, .vaw-activeMonthList, .vaw-ownedVotesLists {
+	min-width: 300px;
+	margin-top: 10px;
+}
+
+/* ------------VAW-Dialogs------------ */
+
+.vaw-dialog-save-title-info, .vaw-dialog-save-title, .vaw-dialog-save-description-info, .vaw-dialog-save-description {
+	min-width: 500px;
+	text-align:center;
+}
+
+.vaw-dialog-save-title-info {
+	text-align:center;
+	display: block;
+}
+
+.vaw-dialog-save-title {
+	
+}
+
+.vaw-dialog-save-description-info {
+	text-align:center;
+	display: block;
+}
+
+.vaw-dialog-save-description {
+	min-height: 100px;
+}
+
+/* ------------Aggregator-widget------------ */
+
+.aggre-intro {
+	display: block;
+	margin-left: 50px;
+	max-width: 800px;
+	margin-bottom: 50px;
+	border: 2px solid black;
+	border-radius: 10px 10px 10px 10px;
+	padding: 5px;
+}
+
+.aggre-element-list {
+	float: left;
+	min-width: 900px;
+	max-width: 900px;
+}
+
+.aggre-source-list {
+	float: left;
+	min-width: 350px;
+	max-width: 350px;	
+}
+
+.aggre-element-title {
+	font-size: 20px;
+	font-weight:bold;
+	margin-top: 15px;
+	display: inline-block;
+}
+
+.aggre-element-info {
+	font-size: 10px;
+	display: inline-block;
+}
+
+.aggre-link {
+	color: black;
+	text-decoration: none;
+	text-decoration:underline;
+}
+
+.aggre-elements-title {
+	display: inline-block;
+	margin-left: 200px;
+	font-size: 25px;
+	margin-top: 20px;
+}
+
+.aggre-sources-title {
+	display: inline-block;
+	margin-left: 50px;
+	font-size: 20px;
+	margin-top: 40px;
+	margin-bottom: 5px;
+}
+
+.aggre-sources-high {
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.aggre-sources-low {
+	display: inline-block;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+.aggre-sources-instructions {
+	font-size: 10px;
+	display: inline-block;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	text-align: center;
+	max-width: 300px;
+}
+
+.aggre-sources-show-all {
+	display: inline-block;
+	margin-top: 20px;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+
+/* ------------FP-Dialogs------------ */
+.fp-news {
+	min-width: 400px;
+	max-width: 400px;
+}
+
+.fp-news-item-title {
+	font-size: 30px;
+	display: inline-block;
+}
+
+.fp-news-item-published {
+	font-size: 10px;
+	display: inline-block;
+}
+
+.fp-news-item-content {
+	display: block;
+	margin-top: 5px;
+	margin-bottom: 25px;
+}
+
+.fp-description {
+	min-width: 700px;
+	max-width: 700px;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+.fp-welcome {
+	min-width: 1100px;
+	max-width: 1100px;
+	margin-left: 550px;
+	margin-bottom: 50px;
+	/*text-align:center;*/
+}

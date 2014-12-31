@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.3">
+  <zoom_level>8</zoom_level>
+  <element>
+    <type>com.umlet.element.custom.EER_Entity</type>
+    <coordinates>
+      <x>696</x>
+      <y>264</y>
+      <w>240</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>Vote information
+Key: VoteInfo:[VoteDate].[VoteNum]
+--
+Topic
+ShortDescritpion
+VoteRecord [ref]
+DateOfVote
+VoteNum
+LinkToRecord
+LinkToVote
+RepresentativeVoteInfo [n]
+ * RepresentativeInfo [re]
+ * VoteDecision
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.EER_Entity</type>
+    <coordinates>
+      <x>416</x>
+      <y>0</y>
+      <w>160</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>UserInfo
+Key: UserInfo:[username]
+--
+Id
+Username
+FirstName
+LastName
+PasswordHash
+HashedPassword</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.EER_Entity</type>
+    <coordinates>
+      <x>1008</x>
+      <y>264</y>
+      <w>208</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>VoteRecord
+Key: VoteRecord:[VoteDate]
+--
+VoteDescription [n]
+MapOfVoteNumberToIndex [n]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.EER_Entity</type>
+    <coordinates>
+      <x>440</x>
+      <y>264</y>
+      <w>160</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>VoteListForMonth
+Key: VoteList:[year].[month]
+--
+Month
+Year
+VoteInfo [ref][n]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>912</x>
+      <y>248</y>
+      <w>112</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>n...1</panel_attributes>
+    <additional_attributes>24;40;96;40</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>576</x>
+      <y>248</y>
+      <w>136</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>n...n</panel_attributes>
+    <additional_attributes>24;40;120;40</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.EER_Entity</type>
+    <coordinates>
+      <x>352</x>
+      <y>488</y>
+      <w>224</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Political Season
+Key: PoliticalSeason:[startingYear]
+--
+Seat
+ * RepresentativeInfo [ref][n]
+ * StartData
+ * EndDate</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.EER_Entity</type>
+    <coordinates>
+      <x>680</x>
+      <y>488</y>
+      <w>256</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Representative
+Key: RepresentativeInfo:[firstname].[lastname]
+--
+Firstname
+Lastname
+PartyHistory [n]
+ * Start
+ * End
+ * Role
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>552</x>
+      <y>464</y>
+      <w>144</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>n...n</panel_attributes>
+    <additional_attributes>24;40;128;40</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>720</x>
+      <y>432</y>
+      <w>66</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>n...n</panel_attributes>
+    <additional_attributes>40;24;40;56</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.EER_Entity</type>
+    <coordinates>
+      <x>40</x>
+      <y>488</y>
+      <w>224</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>List of Political Seasons
+Key: PoliticalSeasonsList
+--
+PoliticalSeason [ref][n]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>240</x>
+      <y>464</y>
+      <w>128</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>n...1</panel_attributes>
+    <additional_attributes>24;40;112;40</additional_attributes>
+  </element>
+</diagram>

@@ -1,0 +1,194 @@
+*** Settings ***
+Resource 						Globals.txt
+Test setup						Test prefix						
+#Test teardown
+Suite setup						Suite prefix
+Suite teardown					Suite postfix				
+
+*** Variables ***
+${InvalidUsername1}				a
+${InvalidUsername2}				qweqweqweqwe
+${InvalidUsername3}				QwertYasdzxcdfg
+${segmentOftermsOfUsageText}	TODO
+
+${InvalidUsernameWithSpace}		Name with space
+${InvalidUsernameTooLong}		ABCDEF123456789012345678901234567890
+${InvalidUsernameTooShort}		a
+${InvalidUsernameInvalidChars}	remove*;
+${InvalidUsernameEmail}			remove*;@nowhere
+
+
+*** Keywords ***
+Fill in registeration information  [Arguments] 	${username}		${password}		${email}	${yearOfBirth}		${gender}
+	${source}						Get Source
+	${UsernameFieldId}				findInputFieldWithTextBeforeIt	${source} 					User name				Please complete the following
+	Input Text						${UsernameFieldId} 				${username}
+	${PasswordFieldId}				findInputFieldWithTextBeforeIt	${source} 					Password				Please complete the following
+	Input Text						${PasswordFieldId} 				${password}
+	${PasswordFieldId2}				findInputFieldWithTextBeforeIt	${source} 					Repeat password			Please complete the following
+	Input Text						${PasswordFieldId2} 			${password}
+	${EmailFieldId}					findInputFieldWithTextBeforeIt	${source} 					Email address			Please complete the following
+	Input Text						${EmailFieldId}		 			${email}
+	${YearOfBirthFieldId}			findInputFieldWithTextBeforeIt	${source} 					Year of birth			Please complete the following
+	Input Text						${YearOfBirthFieldId}			${yearOfBirth}
+	${GenderFieldId}				findInputFieldWithTextBeforeIt	${source} 					Provide gender			Please complete the following	select
+	Select From List				${GenderFieldId}		 		${gender}
+
+Navigate to register dialog
+	Wait Until Page Contains			Register
+	${source}							Get Source
+	Press button						${source}					Register					${empty}
+	Registering dialog should be open
+	
+Navigate to lost password dialog
+	Wait Until Page Contains			Lost password
+	${source}							Get Source
+	Press button						${source}					Lost password				${empty}
+	Wait Until Page Contains			Recover your password
+	
+Click register button in register dialog
+	${source}						Get Source
+	${ButtonId}						findButtonWithText				${source}					Register				Or, register with an ide
+	Click Element					${ButtonId}						1
+
+Click ok for verify email dialog	
+	Wait Until Page Contains		Ok
+	${source}						Get Source
+	Press button					${source}						Ok							${empty}
+	Wait Until Page Contains		${TestUserUsername}
+
+Verify registered email address
+	 ${linkToVerifyAddress} 		validateEmailFileAndGetValidationAddres						${PathToTestUserMail}		${TestUserUsername}
+	 Go to							${linkToVerifyAddress}
+	 Wait Until Page Contains		Ok
+	 ${source}						Get Source
+	 Press button					${source}						Ok							${empty}
+	 
+Read Terms of Usage
+	${source}						Get Source
+	Press button					${source}						Click here to read terms of usage						${empty}
+	Wait Until Page Contains		${segmentOftermsOfUsageText}
+	${source}						Get Source
+	Press button					${source}						Okey													${empty}
+	
+Registering dialog should be open
+	Wait Until Page Contains			Provide gender
+	Wait Until Page Contains			Year of birth
+	Wait Until Page Contains			Email address
+	
+Handle password recovery dialog		[Arguments] 	${email}
+	${source}						Get Source
+	${emailField}					findInputFieldWithTextBeforeIt		${source}				Email address				Recover your password
+	Input Text						${emailField} 						${email}
+	Press button					${source}							Send					${empty}
+	
+Hadle update password dialog		[Arguments] 	${password}
+	Wait Until Page Contains		Update password
+	${source}						Get Source
+	${PasswordFieldId}				findInputFieldWithTextBeforeIt		${source} 				New password				Update password
+	Input Text						${PasswordFieldId} 					${password}
+	${PasswordFieldId2}				findInputFieldWithTextBeforeIt		${source} 				Repeat new password			Update password
+	Input Text						${PasswordFieldId2} 				${password}
+	Press button					${source}							Ok						${empty}
+	Wait until page contains		Logout
+	${source}						Get Source
+	Press button					${source}							Logout						${empty}
+		
+*** Testcases ***
+Normal password registeration and email verification 
+	emptyFile									${PathToTestUserMail}
+	Navigate to register dialog
+	Fill in registeration information  			${TestUserUsername}		${TestUserPassword}		${TestUserEmail}	${TestUserYearOfBirth}		F
+	Read Terms of Usage
+	Wait Until Page Contains					Valid
+	Click register button in register dialog
+	Wait Until Page Contains					Ok
+	Click ok for verify email dialog	
+	Verify registered email address
+	Wait Until Page Contains					Logout
+	Logout
+	Wait Until Page Contains					Login
+	Login										${TestUserUsername}		${TestUserPassword}
+	Page should not contain						Ok
+	Wait Until Page Contains					Logout
+	Wait Until Page Contains					${TestUserUsername}
+	Logout
+	Wait Until Page Contains					Login
+	verifyThatUserExistsInPersistentStorage		${TestUserUsername}	F	${TestUserEmail}	${TestUserYearOfBirth}
+
+Registering with username containing spaces should not work
+	Clear user from all database				${InvalidUsernameWithSpace}
+	Navigate to register dialog
+	Fill in registeration information  			${InvalidUsernameWithSpace}		${TestUserPassword}		${TestUserEmail}	${TestUserYearOfBirth}		F
+	Click register button in register dialog
+	Sleep										1
+	Registering dialog should be open
+	verityThatUserDoesNotExistInPersistantStorage								${InvalidUsernameWithSpace}
+
+Registering with too long username should not work
+	Clear user from all database				${InvalidUsernameTooLong}
+	Navigate to register dialog
+	Fill in registeration information  			${InvalidUsernameTooLong}		${TestUserPassword}		${TestUserEmail}	${TestUserYearOfBirth}		F
+	Click register button in register dialog
+	Sleep										1
+	Registering dialog should be open
+	verityThatUserDoesNotExistInPersistantStorage								${InvalidUsernameTooLong}
+	
+Registering with too short username should not work
+	Clear user from all database				${InvalidUsernameTooShort}
+	Navigate to register dialog
+	Fill in registeration information  			${InvalidUsernameTooShort}		${TestUserPassword}		${TestUserEmail}	${TestUserYearOfBirth}		F
+	Click register button in register dialog
+	Sleep										1
+	Registering dialog should be open
+	verityThatUserDoesNotExistInPersistantStorage								${InvalidUsernameTooShort}
+	
+Registering with username containing special characters should not work
+	Clear user from all database				${InvalidUsernameInvalidChars}
+	Navigate to register dialog
+	Fill in registeration information  			${InvalidUsernameInvalidChars}	${TestUserPassword}		${TestUserEmail}	${TestUserYearOfBirth}		F
+	Click register button in register dialog
+	Sleep										1
+	Registering dialog should be open
+	verityThatUserDoesNotExistInPersistantStorage											${InvalidUsernameInvalidChars}
+
+Registering with an age containing non-numbers should not work
+	Clear user from all database				${TestUserUsername}
+	Navigate to register dialog
+	Fill in registeration information  			${TestUserUsername}		${TestUserPassword}		${TestUserEmail}	abc				F
+	Click register button in register dialog
+	Sleep										1
+	Registering dialog should be open
+	verityThatUserDoesNotExistInPersistantStorage						${TestUserUsername}
+
+Registering with an age higher than 100 should not work
+	Clear user from all database				${TestUserUsername}
+	Navigate to register dialog
+	Fill in registeration information  			${TestUserUsername}		${TestUserPassword}		${TestUserEmail}	1895				F
+	Click register button in register dialog
+	Sleep										1
+	Registering dialog should be open
+	verityThatUserDoesNotExistInPersistantStorage						${TestUserUsername}
+	
+Registering with existing username should not work
+	Navigate to register dialog
+	Fill in registeration information  			${TestUserUsername2}	${TestUserPassword}		${TestUserEmail}	${TestUserYearOfBirth}			F
+	Click register button in register dialog
+	Sleep										1
+	Registering dialog should be open
+	
+Registering with existing email should not work
+	Clear user from all database				${TestUserUsername}
+	Navigate to register dialog
+	Fill in registeration information  			${TestUserUsername}		${TestUserPassword}		${TestUserEmail2}	${TestUserYearOfBirth}			F
+	Click register button in register dialog
+	Sleep										1
+	Registering dialog should be open
+	
+Test password recovery
+	Log									Make sure that persistent user described in tests has been created
+	Navigate to lost password dialog
+	Handle password recovery dialog		${TestUserEmail2}
+	${linkToVerifyAddress} 				validateEmailFileAndGetValidationAddres				${PathToTestUserMail2}		${TestUserUsername2}
+	Go to								${linkToVerifyAddress}
+	Hadle update password dialog		${TestUserPassword2}

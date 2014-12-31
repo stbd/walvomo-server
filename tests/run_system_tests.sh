@@ -1,0 +1,2 @@
+pybot UserAuthTests.txt
+pybot VotesWidgetTests.txt

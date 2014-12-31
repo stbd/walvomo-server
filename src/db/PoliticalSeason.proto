@@ -1,0 +1,21 @@
+package WDbType;
+
+option java_package = "com.oc.protos";
+option java_outer_classname = "PoliticalSeasonInfoProtos";
+
+message PoliticalSeasonsList {
+	required fixed32 latestSeason = 1;
+	repeated fixed32 PoliticalSeasonsStartingYears = 2;
+}
+
+message PoliticalSeason {
+	required fixed32 startYear = 1;
+	required fixed32 endYear = 2;
+	repeated fixed32 representativeIds = 3;
+	repeated MonthYear monthsContainingVotes = 4;
+}
+
+message MonthYear {
+	required fixed32 month = 1;
+	required fixed32 year = 2;
+}

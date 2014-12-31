@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+	<message id="title">Walvomo</message>
+	<message id="page.analyse">Äänestykset</message>
+	<message id="page.analyse.link">aanestykset</message>
+	<message id="page.frontpage">Etusivu</message>
+	<message id="page.frontpage.link">etusivu</message>
+	<message id="page.rssAggregator">Nuuskija</message>
+	<message id="page.rssAggregator.link">nuuskija</message>	
+	
+	<!-- General -->
+	<message id="month.jan">Tammikuu</message>
+	<message id="month.feb">Helmikuu</message>
+	<message id="month.mar">Maaliskuu</message>
+	<message id="month.apr">Huhtikuu</message>
+	<message id="month.may">Toukokuu</message>
+	<message id="month.jun">kesäkuu</message>
+	<message id="month.jul">Heinäkuu</message>
+	<message id="month.aug">Elokuu</message>
+	<message id="month.sep">Syyskuu</message>
+	<message id="month.oct">Lokakuu</message>
+	<message id="month.nov">Marraskuu</message>
+	<message id="month.dec">Joulukuu</message>
+	
+	<!-- Frontpage -->
+	
+	<message id="main.short-legal-info">Sivusto käyttää ikoneja osoitteesta <a href="http://www.brightmix.com">http://www.brightmix.com</a></message>
+	<message id="main.contact">Ota yhteyttä:<br/>admin@walvomo.fi</message>
+	<message id="main.share">Visertele meistä</message>
+	<message id="main.disclaimer">Käyttöehdot</message>
+	<message id="fp.welcome">Tervetuloa</message>
+	<message id="fp.whatisthis">
+Lyhyesti sanottuna Walvomo on jonkin sortin työkalu eduskunnan äänestystulosten ihmettelyyn.
+<br /><br />
+Walvomo on harjoitustyöstä alkunsa saanut harrastusprojekti (insinöörit ja heidän harrastuksensa…). Projektin tarkoituksena on toimia hyvänä syynä mielenkiintoisten 
+teknologioiden kokeilemiseen sekä visualisoinnin opetteluun. Sivutuotteena toivomme tuovamme päättäjien tekemää työtä helpommin lähestyttäväksi ja ymmärrettäviksi.
+<br /><br />
+Ok, mutta miten tätä siis käytetään? Klikkaamalla vasemman yläreunan äänestykset linkkiä pääset selaamaan eduskunnan viimeaikaisia äänestyksiä (sivusto on vielä testauksen alla 
+ja äänestysten määrää tulee kasvamaan ajan myötä). Klikkailemalla listasta olevia äänestyksiä, listan alla oleva kartta visualisoi edustajien tekemät päätökset.
+<br /><br />
+Walvomoa voi käyttää myös jonkinasteisena vaalikoneena. Jokaiseen äänestykseen on liitetty ”Kyllä” ja ”Ei” napit joilla voit sanoa oman mielipiteesi asiasta. Valitessasi jommankumman vaihtoehdoista, 
+äänestys siirtyy oikean reunan äänestyslistaan. Klikkailemalla muita äänestyksiä samaan tyyliin voit kerätä omasta mielestäsi tärkeitä äänestyksiä listaksi, 
+ja sen jälkeen katsoa ketkä kansanedustajista ovat äänestäneet omien ajatustesi mukaisesti.
+<br /><br />
+Jos tunnet että Walvomosta on hyötyä, niin olet tervetullut myös rekisteröitymään palveluun. Rekisteröityminen ei maksa mitään ja se mahdollistaa omien 
+äänestyslistojen tallentamisen ja jakamisen ystävien kesken.
+<br /><br />
+Joten... ei muuta kuin tutkimaan!
+<br /><br />
+Palautetta voi antaa osoitteeseen admin@walvomo.fi
+<br /><br />
+<br /><br />
+<span style="font-size:12px">
+(Kannattaa myös vilkaista palvelun käyttöehdot sivun oikeasta alareunasta)
+</span>
+<br /><br />
+	</message>
+	<message id="fp.news">Uutiset</message>
+	
+	<!-- VotesAnalyserWidget -->
+	
+	<message id="vw.button.match">Vertaa<br />valintoja</message>
+	<message id="vw.button.save">Tallenna<br />lista</message>
+	<message id="vw.button.share">Jaa<br />lista</message>
+	<message id="vw.button.delete">Poista<br />lista</message>
+	<message id="vw.button.show-more-votes">Näytä lisää äänestyksiä</message>
+	<message id="vw.userchoise.yes">Kyllä</message>
+	<message id="vw.userchoise.no">Ei</message>
+	<message id="vw.share-vote">Walvomo</message>
+	<message id="vw.share-vote.button">Jaa</message>
+	<message id="vw.ownedvotelist.default">Kirjaudu sisään nähdäksesi luomasi listat</message>
+	<message id="vw.ownedvotelist.create">Uusi lista</message>
+	<message id="vw.activemonthlist.default">Hyppää kuukauteen</message>
+	<message id="vw.followdvotelist.default">Seuraamasi listat</message>
+	<message id="vw.followdvotelist.login">Kirjaudu nähdäksesi seuraamasi listat</message>
+	<message id="vw.vote.link">Lähde</message>
+	<message id="vw.vote.statistics-line">Tilastot</message>
+	<message id="vw.vote.yes">Jaa</message>
+	<message id="vw.vote.no">Ei</message>
+	<message id="vw.vote.empty">Tyhjä</message>
+	<message id="vw.vote.away">Poissa</message>
+	<message id="vw.vote.approved">Hyväksyttiin</message>
+	<message id="vw.vote.not-approved">Ei hyväksytty</message>
+	<message id="vw.voterecord.no-data">Valitettavasti lisätietoja ei löytynyt</message>
+	
+	<message id="vw.votelistarea.button.end"><br />Enempää äänetyksiä ei löytynyt<br /></message>
+	<message id="vw.politician.link">Lähde</message> 
+	<message id="vw.politician.name">Nimi</message>
+	<message id="vw.politician.party">Puolue</message>
+	<message id="vw.politician.region">Alue</message>
+	
+	<message id="vw.js.additional-seats">Kesken kauden vaihtuneet edustajat</message>
+	<message id="vw.js.match-line.start">Vastaavus:</message>
+	<message id="vw.js.match-line.middle"> Perustuen</message>
+	<message id="vw.js.match-line.end">äänestykseen</message>
+	<message id="vw.js.votes">äänet</message>
+	
+	<message id="vw.instructions">
+<div style="border: 2px solid black;border-radius: 10px;padding:5px;min-width:300px;">
+Ohjeita
+<ul>
+<li>Klikkaamalla äänestyksiä vasemman yläreunan listasta kyseisen äänestyksen äänet näytettään istumakartalla yhdessä äänestykseen liittyvien tilastojen kanssa</li>
+<ul>
+<li style="color:green">Vihreä vastaa jaa ääntä</li>
+<li style="color:red">Punainen vastaa ei ääntä</li>
+<li style="color:black">Musta vastaa tyhjää ääntä</li>
+<li style="color:grey">Harmaa tarkoittaa poissaoloa</li>
+<li style="color:pink">Pinkki on puhemies</li>
+</ul>
+<li>Klikkaamalla istumapaikkaa kyseisestä edustajasta näytetään lisätietoja</li>
+<li>Klikkaamalla puolueiden alla olevia palloja voit valita näytettävät puolueet</li>
+</ul>
+</div>
+</message>
+	
+	<!-- Aggregator -->
+	<message id="aggre.items.published">Julkaistu</message>
+	<message id="aggre.items.source">Lähde</message>
+	
+	<message id="aggre.elements.title">Kirjoituksia</message>
+	<message id="aggre.sources.title">Lähteet</message>
+	<message id="aggre.sources.instructions">(Klikkaa lähdettä tai puoluetta nähdäksesi vain tietyt kirjoitukset)</message>
+	<message id="aggre.sources.show-all">Näytä kaikki kirjoitukset</message>
+	
+	<message id="aggre.sources.intro">
+Nuuskija on Walvomon näpsäkkä pieni botti jonka tarkoituksena on nuuskia edustajien blogien RSS tai Atom feedejä ja kerätä niiden sisältö yhteen paikkaan.
+<br/><br/>
+Kuten lähdelistasta saattaa huomata, kaikkien edustajien blogit eivät valitettavasti löydy täältä. Osaksi tämä johtuu siitä että kaikki eivät ensinnäkään bloggaa, osa bloggaavista ei tarjoa feedejä (tai piilottavat ne liian hyvin), osan kanssa oli joitain teknisiä ongelmia.
+Jos löydät feedin joka ei ole listassa siitä voi ilmoittaa osoitteeseen admin@walvomo.fi
+<br/><br/>
+Myös muita politiikkaan liittyviä voi blogeja voi ehdottaa samaan osoitteeseen.
+<br/><br/>
+Nuuskijan käyttö on yksinkertaista: oletuksena alla olevassa listassa näytetään kaikki edustajien blogikirjoitukset järjestettynä julkaisuajankohdan mukaan. Lähteet ovat nähtävissä oikean reunan listassa.
+Voit klikata tästä listasta joko yksittäisen edustajan tai puolueen nimeä jolloin palvelu suodattaa kaikki paitsi tämän henkilön tai puolueen kirjoitukset. Aivan alimmaisena on nappi jolla voit poistaa suodatuksen.
+</message>
+	
+	<!-- Dialog texts -->
+	
+	<message id="dialog.create_account.title">Hei, tämä vaatii käyttäjätilin</message>
+	<message id="dialog.create_account.text">Klikkaa rekisteröidy linkkiä sivun yläreunasta luodaksesi tilin</message>
+	<message id="dialog.create_account.exit_button">Ok</message>
+	
+	<message id="dialog.verify_email.title">Muista varmentaa sähköpostiosoitteesi</message>
+	<message id="dialog.verify_email.text">
+		Näyttäisi että et ole vielä varmentanut sähköpostiosoittettasi.
+		<br /><br />
+		Varmentaminen onnistuu helposti klikkaamalla linkkiä joka on sähköpostissa, jonka lähetimme rekisteöityessäsi Walvomoon.
+	</message>
+	<message id="dialog.verify_email.exit_button">Ok</message>
+	
+	<message id="dialog.share.title">Jaa linkki muihin medioihin</message>
+	<message id="dialog.share.text">Jaa linkki tähän kopioimalla se suoraan kavereillesi tai visertele se allaolevien nappien kautta</message>
+	<message id="dialog.share.exit_button">Poistu</message>
+	
+	<message id="dialog.save.title">Tallenna lista</message>
+	<message id="dialog.save.field.name">Nimi<br />(lyhyt nimi listan tunnistamiseen)</message>
+	<message id="dialog.save.field.description">Kuvaus<br />(Pidempi kuvaus siitä mitä haluat sanoa listalla)</message>
+	<message id="dialog.save.button.ok">Tallenna</message>
+	<message id="dialog.save.button.cancel">Peruuta</message>
+	
+	<message id="dialog.usererror.title">Ohops...</message>
+	<message id="dialog.usererror.text">TODO</message>
+	<message id="dialog.usererror.exit_button">Ok</message>
+	
+	<message id="dialog.terms-of-usage.title">Käyttöehdot</message>
+	<message id="dialog.terms-of-usage.text">
+Walvomo on harrastusprojekti.
+<br/><br/>
+Sitä ylläpitää muutama koodari joidenka tarkoitus (ainakin kirjoitushetkellä) on puhtaasti maailman parantaminen. Johtuen kuitenkin resurssien vähäisyydestä, on mahdollista että dataan tai logiikkaan on jäänyt pienempiä tai suurempia virheitä, ja sen takia esitettävä tieto saattaa poiketa oikeasta.
+<br/><br/>
+Käyttämällä palvelua ymmärrät että Walvomon ylläpitäjät eivät ota minkäänlaista vastuuta datan oikeellisuudesta, ja esimerkiksi vallankumousta suunniteltaessa on suositeltavaa tarkistaa lähteet itse!
+	</message>
+	<message id="dialog.terms-of-usage.exit_button">Hyväksyn</message>
+	
+	<!-- ---Error messages--- -->
+	<message id="dialog.error.uservotelist-not-found">Listaa ei jostain kumman syystä löytynyt</message>
+	<message id="dialog.error.vote-not-found">Äänestystä ei jostain kumman syystä löytynyt</message>
+	<message id="error.vaw.match.list.empty">Please, choose some votes first</message>
+	<message id="error.vaw.uservotelist-notselected">Valitse jaettava lista alasveto valikosta</message>
+	<message id="error.vaw.uservotelist-notsaved">Tallenna lista ennen jakamista</message>
+	<message id="error.vaw.match.name.empty">Listan tallentaminen vaattii että sillä on nimi ja kuvaus</message>
+	<message id="error.vaw.delete.empty">Valitse lista</message>
+	<message id="error.vaw.votes.season.diff">TÄllä hetkellä äänestykset voivat olla vain yhden kauden sisältä</message>
+	
+	<!-- ---Wt auhtentication stuff--- -->
+	
+	<message id="Wt.Auth.gender.male">M</message>
+	<message id="Wt.Auth.gender.female">N</message>
+	<message id="Wt.Auth.gender">Sukupuoli</message>
+	<message id="Wt.Auth.gender.info"></message>
+	<message id="Wt.Auth.year-of-birth"><br />Syntymävuosi</message>
+	<message id="Wt.Auth.year-of-birth.info"></message>
+	<message id="Wt.Auth.disclaimer">Käyttöehdot</message>
+	<message id="Wt.Auth.disclaimer.info">Rekisteröitymällä hyväksyt ehdot</message>
+	<message id="Wt.Auth.disclaimer.button">Lue ehdot</message>	
+	<message id="Wt.Auth.string.invalid">Kenttä ei saa sisältää erikoismerkkejä</message>
+	<message id="Wt.Auth.name.too-long">Nimi on liian pitkä</message>
+	
+	<!-- BaseAuth, PasswordAuth and OAuth models -->
+	<message id="Wt.Auth.error-invalid-token">Virhe: pyyntöä ei löytynyt.</message>
+	<message id="Wt.Auth.error-token-expired">The operation could not be completed: the token has expired.</message>
+	<message id="Wt.Auth.mail-sent">Sähköposti on lähetty rekisteröimääsi osoitteeseen.</message>
+	<message id="Wt.Auth.info-email-confirmed">Sähköpostiosoitteesi on rekisteröity.</message>
+
+	<message id="Wt.Auth.passwdqc.reason-error">Check failed</message>
+	<message id="Wt.Auth.passwdqc.reason-same">The same as the old one</message>
+	<message id="Wt.Auth.passwdqc.reason-similar">Based on the old one</message>
+	<message id="Wt.Auth.passwdqc.reason-short">Liian lyhyt</message>
+	<message id="Wt.Auth.passwdqc.reason-long">Liian pitkä</message>
+	<message id="Wt.Auth.passwdqc.reason-simpleshort">Not enough different characters or classes for this length</message>
+	<message id="Wt.Auth.passwdqc.reason-simple">Not enough different characters or classes</message>
+	<message id="Wt.Auth.passwdqc.reason-personal">Based on personal information</message>
+	<message id="Wt.Auth.passwdqc.reason-word">Based on a dictionary word and not a passphrase</message>
+	<message id="Wt.Auth.passwdqc.reason-seq">Based on a common sequence of characters</message>
+
+	<message id="Wt.Auth.GoogleService.badresponse">
+<p>Oho, kirjautuminen Google tunnuksella epäonnistui.</p>
+<small><p>Google palvelin palautti odottamattoman vastauksen.</p></small>
+	</message>
+
+	<message id="Wt.Auth.FacebookService.badresponse">
+<p>Sorry, could not login using your Facebook account.</p>
+<small><p>Facebook's identification server generated an unexpected response.</p></small>
+	</message>
+
+	<!-- LoginWidget -->
+	<message id="Wt.Auth.login-form-title">Kirjaudu</message>
+	<message id="Wt.Auth.login-form-info"></message>
+	<message id="Wt.Auth.user-name">Käyttäjänimi</message>
+	<message id="Wt.Auth.user-name-info">Nimi jolla haluat tulla tunnetuksi Walvomossa</message>
+	<message id="Wt.Auth.user-name-invalid">Invalid</message>
+	<message id="Wt.Auth.email">Sähköpostiosoitteesi</message>
+	<message id="Wt.Auth.email-info"></message>
+	<message id="Wt.Auth.optional-email-info"></message>
+	<message id="Wt.Auth.password">Salasana</message>
+	<message id="Wt.Auth.password-info"></message>
+	<message id="Wt.Auth.remember-me">Remember me</message>
+	<message id="Wt.Auth.remember-me-info.days">Remember me (for {1} days)</message>
+	<message id="Wt.Auth.remember-me-info.weeks">Remember me (for {1} weeks)</message>
+	<message id="Wt.Auth.lost-password">Unohtuiko salasana?</message>
+	<message id="Wt.Auth.login">Kirjaudu</message>
+	<message id="Wt.Auth.logout">Kirjaudu ulos</message>
+	<message id="Wt.Auth.throttle-retry">Kokeile uudestaan {1}s</message>
+
+	<!-- RegistrationWidget -->
+	<message id="Wt.Auth.registration-form-title">Rekisteröinti</message>
+	<message id="Wt.Auth.registration-form-info">Luo tili täyttämällä alla olevat kentät</message>
+	<message id="Wt.Auth.password-or-oauth-registration"><h3>Rekisteröidy käyttäjänimellä ja salasanalla:</h3></message>
+	<message id="Wt.Auth.oauth-registration"><h3>Rekisteröidy kolmannen osapuolen avulla:</h3></message>
+	<message id="Wt.Auth.or-oauth-registration"><h3>tai, rekisteröidy kolmannen osapuolen avulla:</h3></message>
+	<message id="Wt.Auth.valid">Ok</message>
+	<message id="Wt.Auth.choose-password">Salasana</message>
+	<message id="Wt.Auth.choose-password-info"></message>
+	<message id="Wt.Auth.repeat-password">Salasana uudelleen</message>
+	<message id="Wt.Auth.repeat-password-info">Kirjoitusvirheiden välttämiseksi</message>
+	<message id="Wt.Auth.email-invalid">Sähköpostiosoite on väärän muotoinen</message>
+	<message id="Wt.Auth.email-exists">Sähköpostiosoite on jo rekisteröity</message>
+	<message id="Wt.Auth.oauth">Tuetut vaihtoehdot</message>
+	<message id="Wt.Auth.oauth-info">Valitse palvelu jossa sinulla on ennestään tili</message>
+	<message id="Wt.Auth.user-name-exists">Käyttäjä on jo olemassa</message>
+	<message id="Wt.Auth.confirm-is-you">Käyttäjä on jo olemassa, oletko se sinä?</message>
+	<message id="Wt.Auth.user-name-tooshort">Minimi pituus {1}</message>
+	<message id="Wt.Auth.password-tooshort">Maksimi pituus {1}</message>
+	<message id="Wt.Auth.passwords-dont-match">Salasanat eivät täsmää</message>
+	<message id="Wt.Auth.registration">Rekisteröinti</message>
+	<message id="Wt.Auth.register">Rekisteröidy</message>
+	<message id="Wt.Auth.error-user-invalid">Rekisteröinti epäonnistui.</message>
+
+	<!-- PasswordPromptDialog -->
+	<message id="Wt.Auth.enter-password">Salasanasi</message>
+	<message id="Wt.Auth.password-prompt-form-title"></message>
+	<message id="Wt.Auth.password-prompt-form-info"></message>
+	<message id="Wt.Auth.password-invalid">Salasana epäkelpo</message>
+
+	<!-- UpdatePasswordWidget -->
+	<message id="Wt.Auth.updatepassword">Päivitä salasanasi</message>
+	<message id="Wt.Auth.update-password-form-title"></message>
+	<message id="Wt.Auth.update-password-form-info">Kirjoita salasanasi</message>
+	<message id="Wt.Auth.old-password">Nykyinen salasanasi</message>
+	<message id="Wt.Auth.old-password-info">Kirjoita salasanasi</message>
+	<message id="Wt.Auth.new-password">Salasanan uusiminen</message>
+	<message id="Wt.Auth.repeat-new-password">Salasana toisen kerran</message>
+	<message id="Wt.Auth.repeat-new-password-info">(kirjoitusvirheiden välttämiseksi)</message>
+
+	<!-- LostPasswordDialog -->
+	<message id="Wt.Auth.lostpassword">Salasana unohtunut? Ei hätää!</message>
+	<message id="Wt.Auth.lost-password-form-title">Palauta salasanasi</message>
+	<message id="Wt.Auth.lost-password-form-info">Kirjoita alla olevaan kenttään sähköpostisoitteesi jota käytit rekisteröityessäsi Walvomoon, lähetämme ohjeet salasanan palauttamiseksi tähän osoitteeseen.</message>
+	<message id="Wt.Auth.send">Lähetä</message>
+
+	<!-- Message boxes -->
+
+	<message id="Wt.Auth.error">Virhe</message>
+	<message id="Wt.Auth.notice">Info</message>
+
+	<!-- templates -->
+	<message id="Wt.Auth.template.login">
+<h4 class="left main-header-login-field-length">${tr:Wt.Auth.login-form-title}:</h4>
+
+<div class="left">
+	<div class="left Wt-auth-login">
+		${<if:passwords>}
+			<div>
+				<label class="main-header-login-field-length" for="${id:user-name}">${user-name-label}</label>
+				${user-name}
+			</div>
+			<div>
+				<label class="main-header-login-field-length" for="${id:password}">${tr:Wt.Auth.password}</label>
+				${password}
+			</div>
+			${<if:remember-me>}
+				<div>
+					<label for="${id:remember-me}">${remember-me-info}</label>
+					${remember-me}
+				</div>
+			${</if:remember-me>}
+		${</if:passwords>}
+	</div>
+	
+	<div class="left">
+		${login}
+	</div>
+
+	<div class="main-horizontalRule" runat="server"></div>
+
+	${<if:oauth>}
+		<div class="Wt-col-right">
+		<p class="left main-header-logInViaOther">Tai käyttäen:</p>
+		${icons}
+		</div>
+	${</if:oauth>}
+	
+	<div class="main-header-login-field block center-text">
+		${lost-password} ${sep} ${register}
+	</div>
+</div>
+	</message>
+
+	<message id="Wt.Auth.template.registration">
+    <div class="Wt-form Wt-auth-registration">
+      <h2>${tr:Wt.Auth.registration-form-title}</h2>
+      <p>${tr:Wt.Auth.registration-form-info}</p>
+
+      ${password-description}
+
+      <div class="Wt-fields">
+        ${<if:user-name>}
+	  <label for="${id:user-name}">${user-name-label}
+	    ${user-name-info class="Wt-info"}
+	    ${confirm-is-you class="Wt-info"}
+	  </label>
+	  ${user-name}
+	${</if:user-name>}
+
+        ${<if:choose-password>}
+	  <label for="${id:choose-password}">${tr:Wt.Auth.choose-password}
+	    ${choose-password-info class="Wt-info"}
+	  </label>
+	  ${choose-password}
+
+	  <label for="${id:repeat-password}">${tr:Wt.Auth.repeat-password}
+	    ${repeat-password-info class="Wt-info"}
+	  </label>
+	  ${repeat-password}
+	${</if:choose-password>}
+
+        ${<if:email>}
+	  <label for="${id:email}">${tr:Wt.Auth.email}
+	    ${email-info class="Wt-info"}
+	  </label>
+	  ${email}
+        ${</if:email>}
+        
+	  <label for="${id:choose-gender}">${tr:Wt.Auth.gender}
+	    ${choose-gender-info class="Wt-info"}
+	  </label>
+	  ${choose-gender}
+
+	  <label for="${id:year-of-birth}">${tr:Wt.Auth.year-of-birth}
+	    ${year-of-birth-info class="Wt-info"}
+	  </label>
+	  ${year-of-birth}
+	  
+	  <label for="${id:disclaimer}">${tr:Wt.Auth.disclaimer}
+	    ${disclaimer-info class="Wt-info"}
+	  </label>
+	  ${disclaimer}	  
+        
+      </div>
+
+      ${<if:oauth>}
+        <br clear="both" />
+	${oauth-description}
+	<label>${tr:Wt.Auth.oauth}
+	  <span class="Wt-info">${tr:Wt.Auth.oauth-info}</span>
+	</label>
+	${icons}
+      ${</if:oauth>}
+
+      <div class="Wt-buttons">
+	${ok-button} ${cancel-button}
+      </div>
+    </div>
+	</message>
+
+	<message id="Wt.Auth.template.update-password">
+    <div class="Wt-form Wt-auth-update-password">
+      <h2>${tr:Wt.Auth.update-password-form-title}</h2>
+      <p>${tr:Wt.Auth.update-password-form-info}</p>
+
+      <div class="Wt-fields">
+	<label for="${id:user-name}">${tr:Wt.Auth.user-name}
+	</label>
+	${user-name}
+
+	${<if:old-password>}
+	  <label for="${id:old-password}">${tr:Wt.Auth.old-password}
+	    ${old-password-info class="Wt-info"}
+	  </label>
+	  ${old-password}
+	${</if:old-password>}
+
+        <label for="${id:choose-password}">${tr:Wt.Auth.new-password}
+	  ${choose-password-info class="Wt-info"}
+        </label>
+        ${choose-password}
+
+        <label for="${id:repeat-password}">${tr:Wt.Auth.repeat-new-password}
+	  ${repeat-password-info class="Wt-info"}
+        </label>
+        ${repeat-password}
+        
+      </div>
+
+      <div class="Wt-buttons">
+	${ok-button} ${cancel-button}
+      </div>
+    </div>
+	</message>
+
+	<message id="Wt.Auth.template.lost-password">
+    <div class="Wt-form Wt-auth-lost-password">
+      <h2>${tr:Wt.Auth.lost-password-form-title}</h2>
+      <p>${tr:Wt.Auth.lost-password-form-info}</p>
+
+      <div class="Wt-fields">
+	<label for="${id:email}">${tr:Wt.Auth.email}
+	  <span class="Wt-info">${tr:Wt.Auth.email-info}</span>
+	</label>
+	${email}
+      </div>
+
+      <div class="Wt-buttons">
+	${send-button} ${cancel-button}
+      </div>
+    </div>
+	</message>
+
+	<message id="Wt.Auth.template.password-prompt">
+    <div class="Wt-form Wt-auth-password-prompt">
+      <h2>${tr:Wt.Auth.password-prompt-form-title}</h2>
+      <p>${tr:Wt.Auth.password-prompt-form-info}</p>
+
+      <div class="Wt-fields">
+	<label for="${id:user-name}">${tr:Wt.Auth.user-name}
+	</label>
+	${user-name}
+
+	<label for="${id:password}">${tr:Wt.Auth.password}
+	  ${password-info class="Wt-info"}
+	</label>
+	${password}
+      </div>
+
+      <div class="Wt-buttons">
+	${ok-button} ${cancel-button}
+      </div>
+    </div>
+  </message>
+
+	<message id="Wt.Auth.template.logged-in">
+<div class="right">
+<b>${user-name}</b> ${logout}
+</div>
+	</message>
+
+	<!-- Emails -->
+	<message id="Wt.Auth.confirmmail.subject">Walvomon käyttäjätilin aktivointi</message>
+	<message id="Wt.Auth.confirmmail.body">
+Hei {1},
+
+Tervetuloa Walvomon jäseneksi!
+
+Varmista vielä sähköpostiosoitteesi kopioimalla alla oleva linkki selaimeesi.
+
+{3}
+
+Ystävällisin terveisin,
+Walvomo tiimi
+	</message>
+
+	<message id="Wt.Auth.confirmmail.htmlbody">
+    <h3>Hei {1},</h3>
+
+    <p>Tervetuloa Walvomon jäseneksi!</p>
+    
+    <p>Varmista vielä sähköpostiosoitteesi klikkaamalla <a href="{3}">tästä</a> tai kopioi alla oleva linkki selaimeesi.</p>
+
+    <b>{3}</b>
+
+    <p>Ystävällisin terveisin,<br />
+	Walvomo tiimi</p>
+	</message>
+
+	<message id="Wt.Auth.lostpasswordmail.subject">Salasanan palauttaminen</message>
+
+	<message id="Wt.Auth.lostpasswordmail.body">
+Hei {1},
+
+Tämä sähköposti on lähetetty koska joku (ilmeisesti sinä) toivoit 
+salasanan palauttamista.
+
+Jos tämä viesti on lähetetty sinun toivomuksestasi, niin kopioi allaoleva linkki
+selaimeesi.
+
+{3} 
+
+Jos sinä et ole toivonut salasanan palauttamista, voit turvallisin mielin
+poistaa tämän viestin.
+
+Walvomo tiimi
+	</message>
+
+	<message id="Wt.Auth.lostpasswordmail.htmlbody">
+<h3>Hei {1},</h3>
+
+<p>Tämä sähköposti on lähetetty koska joku (ilmeisesti sinä) toivoit salasanan palauttamista.</p>
+<p>Jos tämä viesti on lähetetty sinun toivomuksestasi, <a href="{3}">klikkaa tästä</a> tai kopioi allaoleva linkki selaimeesi.</p>
+ 
+<b>{3}</b>
+ 
+<p>Jos sinä et ole toivonut salasanan palauttamista, voit turvallisin mielin
+poistaa tämän viestin.</p>
+
+<p>Ystävällisin terveisin,<br />
+Walvomo tiimi</p>
+</message>
+
+</messages>

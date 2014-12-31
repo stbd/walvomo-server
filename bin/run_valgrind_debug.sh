@@ -1,0 +1,1 @@
+valgrind /usr/bin/valgrind --tool=memcheck --leak-check=full --show-reachable=yes ./oc_server_debug --docroot root/ --http-address 0.0.0.0 --http-port 8080 -c wt_config_debug.xml

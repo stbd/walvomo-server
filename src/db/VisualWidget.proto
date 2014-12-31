@@ -1,0 +1,23 @@
+package WDbType;
+
+option java_package = "com.oc.protos";
+option java_outer_classname = "VisualWidget";
+
+enum WidgetState {
+	WORK_IN_PROGRESS = 1;
+	FINAL = 2;
+	ON_GOING = 3;
+}
+
+message VisualWidgetHeader {
+	required string title = 1;
+	required string author = 2;
+	required string authorId = 3;
+	required string published = 4;
+	required WidgetState state = 5;
+}
+
+message VisualWidgetData {
+	required string code = 1;
+	optinal string data = 2;
+}

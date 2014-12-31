@@ -1,0 +1,91 @@
+*** Settings ***
+Library						OperatingSystem
+Library						Selenium Library
+Library						TestLib
+Library 					Screenshot
+
+*** Variables ***
+${ServerUrl} 				http://127.0.0.1:8080/w/
+
+${DbControllScript}			../../w_admin/run.sh
+
+#User that can be created and deleted
+${TestUserUsername}			TestUser
+${TestUserPassword}			Aqwe1zxcsS
+${TestUserEmail}			testuser@localhost
+${TestUserYearOfBirth}		1980
+${PathToTestUserMail}		/var/mail/testuser
+
+#User that should be always in the database (created manually)
+${TestUserUsername2}		testuserpersistent
+${TestUserPassword2}		Aqwe1zxcsS
+${TestUserEmail2}			testuserpersistent@localhost
+${TestUserYearOfBirth2}		1985
+${TestUserGender2}			M
+${PathToTestUserMail2}		/var/mail/testuserpersistent
+
+${UserVoteListOneTopic}		List1
+${UserVoteListOneDesc}		List used for testing, this should not be deleted
+${UserVoteListOneLink}		http://127.0.0.1:8080/w/votes?user=testuserpersistent&list=504071632
+${UserVoteListOneLinkEnc}	http://127.0.0.1:8080/w/votes?user=testuserpersistent&amp;list=504071632
+${UserVoteListOneElemtOne}	21.12.2012:112
+${UserVoteListOneElemtTwo}	21.12.2012:111
+
+${UserVoteListTwoTopic}		Other list
+${UserVoteListTwoDesc}		This is also a list used for testing, do not delete it
+${UserVoteListTwoLink}		http://127.0.0.1:8080/w/votes?user=testuserpersistent&list=1420794612
+${UserVoteListTwoLinkEnc}	http://127.0.0.1:8080/w/votes?user=testuserpersistent&amp;list=1420794612
+${UserVoteListTwoElemtOne}	21.12.2012:105
+${UserVoteListTwoElemtTwo}	21.12.2012:104
+${UserVoteListTwoElemtThree}	21.12.2012:103
+
+${InvalidUserVoteListLink}	http://127.0.0.1:8080/w/votes?user=testuserpersistent&list=50407
+${InvalidVotetLink}			http://127.0.0.1:8080/w/votes?user=testuserpersistent&list=50407
+
+${SharedVoteLinkOne}		http://127.0.0.1:8080/w/votes?voteid=21.12.2012:112
+${SharedVoteLinkContentOne}	21.12.2012:112
+${SharedVoteLinkTwo}		http://127.0.0.1:8080/w/votes?voteid=21.12.2012:100
+
+*** Keywords ***
+Press button						[Arguments] 	${source}		${buttonText}				${prefix}
+	${ButtonId}						findButtonWithText				${source}					${buttonText}			${prefix}
+	Click Element					${ButtonId}						1
+	
+Login								[Arguments] 	${username}		${password}
+	Wait until page contains		Login
+	${source}						Get Source
+	${UsernameFieldId}				findInputFieldWithTextBeforeIt	${source} 					User name
+	Input Text						${UsernameFieldId} 				${username}
+	${PasswordFieldId}				findInputFieldWithTextBeforeIt	${source} 					Password
+	Input Text						${PasswordFieldId} 				${password}
+	Press button					${source}						Login						User name
+	Wait until page contains		${username}
+	
+Logout
+	${source}						Get Source
+	Press button					${source}						Logout						${empty}
+
+Clean test user from Db								[Arguments] 	${username}
+	Run												${DbControllScript} deleteuser ${username}
+
+Suite prefix
+	Start Selenium Server
+	Open Browser									${ServerUrl}
+	
+Test prefix
+	Clean Test User From Db							${TestUserUsername}
+	clearUsersFromPersistentUserDb					${TestUserUsername}
+	verityThatUserDoesNotExistInPersistantStorage	${TestUserUsername}
+	emptyFile										${PathToTestUserMail}
+	emptyFile										${PathToTestUserMail2}
+	Go to											${ServerUrl}
+	Wait until page contains						Votes
+	
+Clear user from all database						[Arguments] 	${username}
+	clearUsersFromPersistentUserDb					${username}
+	verityThatUserDoesNotExistInPersistantStorage	${username}
+	Clean test user from Db							${username}
+	
+Suite postfix
+	Close Browser
+	Stop Selenium Server

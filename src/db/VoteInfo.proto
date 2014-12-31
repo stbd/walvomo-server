@@ -1,0 +1,63 @@
+package WDbType;
+
+option java_package = "com.oc.protos";
+option java_outer_classname = "VoteInfoProtos";
+
+import "Dictionary.proto";
+
+enum VoteChoise {
+	YES = 1;
+	NO = 2;
+	AWAY = 3;
+	EMPTY = 4;
+}
+
+message ListOfVotesForMonth {
+	required fixed32 month = 1;
+	required fixed32 year = 2;
+	repeated string voteId = 3;
+}
+
+message VoteInfo {
+	required string topic = 1;
+	required string shortDescription = 2;
+	required string dateOfVote = 3;
+	required fixed32 voteNumber = 4;
+	required string linkToRecord = 5;
+	required string linkToVote = 6;
+	required fixed32 idOfChair = 7;
+	required Dictionary voteStatistics = 8;
+	
+	repeated RepresentativeVoteInfo voteInfo = 9;
+}
+
+message RepresentativeVoteInfo {
+	required fixed32 id = 1;
+	required VoteChoise voteDecision = 2;
+}
+
+message VoteRecord {
+	//Vote number-1 is the index here 
+	repeated string voteDescription = 1;
+	//repeated fixed32 mapOfVoteNumberToVoteDescriptionIndex = 2;
+}
+
+message UserVoteList {
+
+	enum Vote {
+		YES = 1;
+		NO = 2;
+		NO_OPINION = 3;
+	}
+
+	message UserVoteInfo {
+		required string voteId = 1;
+		required Vote decision = 2;
+	}
+
+	required string name = 1;
+	required string description = 2;
+	required fixed32 relatedSeasonStartingYear = 3;
+	//repeated string voteId = 4;
+	repeated UserVoteInfo userVoteInfo = 5;
+}

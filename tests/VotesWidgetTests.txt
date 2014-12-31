@@ -1,0 +1,128 @@
+*** Settings ***
+Resource 						Globals.txt
+Test setup						Test prefix						
+#Test teardown
+Suite setup						Suite prefix
+Suite teardown					Suite postfix
+
+*** Variables ***
+
+
+*** Keywords ***
+Validate that correct uservotelist is shown				[Arguments] 	${listName}		${listDescription}		@{varargs}
+	#Page should contain								${listName}
+	Wait until page contains							${listDescription}
+	: FOR	 ${listId} 	IN	 @{varargs}
+	\	 Wait until page contains						${listId}
+	
+Select uservotelist										[Arguments] 	${listName}
+	Wait until page contains							Create new list
+	${source}											Get Source
+	${voteListId}										findSelectInputFieldWithDefaultText		${source}		Create new list
+	Select From List									${voteListId}		 			${listName}
+	
+Navigate to votes page
+	Click Link											Votes					1
+	
+Click share list button
+	${source}											Get Source
+	Press button										${source}						Share					Save
+
+*** Testcases ***
+Valid shared uservotelist link should show the selected votes
+	Goto												${UserVoteListOneLink}
+	Validate that correct uservotelist is shown			${UserVoteListOneTopic}		${UserVoteListOneDesc}		${UserVoteListOneElemtOne}		${UserVoteListOneElemtTwo}
+	Page should not contain								${UserVoteListTwoElemtOne}
+	
+Valid shared vote link should display the correct vote
+	Goto												${SharedVoteLinkOne}
+	Wait until page contains							${SharedVoteLinkContentOne}
+	
+Invalid shared uservotelist link should show an error dialog
+	Goto												${InvalidUserVoteListLink}
+	wait until page contains							Oops
+	${source}											Get Source
+	Press button										${source}						Okey					${empty}
+	
+Invalid vote link should shown an error dialog
+	Goto												${InvalidVotetLink}
+	wait until page contains							Oops
+	${source}											Get Source
+	Press button										${source}						Okey					${empty}
+
+Login and select uservolist one
+	Login												${TestUserUsername2}		${TestUserPassword2}
+	Navigate to votes page
+	Select uservotelist									${UserVoteListOneTopic}
+	Validate that correct uservotelist is shown			${UserVoteListOneTopic}		${UserVoteListOneDesc}		${UserVoteListOneElemtOne}		${UserVoteListOneElemtTwo}
+	Logout
+	
+Login and select uservolist two
+	Login												${TestUserUsername2}		${TestUserPassword2}
+	Navigate to votes page
+	Select uservotelist									${UserVoteListTwoTopic}
+	Validate that correct uservotelist is shown			${UserVoteListTwoTopic}		${UserVoteListTwoDesc}		${UserVoteListTwoElemtOne}		${UserVoteListTwoElemtTwo}	${UserVoteListTwoElemtThree}
+	Logout
+	
+Login and validate share link for votelist two
+	Login												${TestUserUsername2}		${TestUserPassword2}
+	Navigate to votes page
+	Select uservotelist									${UserVoteListTwoTopic}
+	Click share list button
+	Sleep	1
+	${source}											Get Source
+	Log													${source}
+	validateThatPageHasText								${source}					${UserVoteListTwoLinkEnc}
+	Press button										${source}					Done						${empty}
+	Logout
+	
+Login and validate share link for votelist one
+	Login												${TestUserUsername2}		${TestUserPassword2}
+	Navigate to votes page
+	Select uservotelist									${UserVoteListOneTopic}
+	Click share list button
+	Sleep	1
+	${source}											Get Source
+	Log													${source}
+	validateThatPageHasText								${source}					${UserVoteListOneLinkEnc}
+	Press button										${source}					Done						${empty}
+	Logout
+	
+Clicking share button logged out should shown an error dialog
+	Navigate to votes page
+	Wait until page contains							Share
+	${source}											Get Source
+	Press button										${source}					Share						Match
+	Wait until page contains							Please
+	${source}											Get Source
+	Press button										${source}					Ok, thanks					${empty}
+
+Clicking save button logged out should shown an error dialog
+	Navigate to votes page
+	Wait until page contains							Share
+	${source}											Get Source
+	Press button										${source}					Save						Match
+	Wait until page contains							Please
+	${source}											Get Source
+	Press button										${source}					Ok, thanks					${empty}
+
+Clicking delete button logged out should shown an error dialog
+	Navigate to votes page
+	Wait until page contains							Share
+	${source}											Get Source
+	Press button										${source}					Delete						Match
+	Wait until page contains							Please
+	${source}											Get Source
+	Press button										${source}					Ok, thanks					${empty}
+
+Clicking share button with empty list should shown an error dialog
+	Login												${TestUserUsername2}		${TestUserPassword2}
+	Navigate to votes page
+	Wait until page contains							Share
+	${source}											Get Source
+	Press button										${source}					Share						Match
+	Wait until page contains							Oops
+	${source}											Get Source
+	Press button										${source}					Okey, thanks				${empty}
+	Logout
+	
