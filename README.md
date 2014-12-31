@@ -14,7 +14,7 @@ Being most familiar with C and C++ languages, I wanted to try to create web serv
 
 ## Some notes about design
 
-Project is split into two repositories; walvomo-server (this repo) includes all C++ server things, walvomo-data includes various scripts that I used to download and process data. (TODO: create repository and link to it)
+Project is split into two repositories; walvomo-server (this repo) includes all C++ server things, walvomo-data includes various scripts that I used to download and process data (see: https://github.com/stbd/walvomo-data).
 
 Since this is C++ I tried to keep efficiency in mind, that can be seen in things like I tried to allocate memory in advance. And for example load html templates to memory. Not that that it was really needed nor wise in all cases, at its peak the site had 0.5 users per day, it handled those magnificently fast:)
 
